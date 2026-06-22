@@ -18,8 +18,15 @@ class _CatalogoPeliculasState extends State<CatalogoPeliculas> {
 
   // FUNCIÓN QUE LEE EL JSON DESDE LA URL
   Future<List<dynamic>> leerURL() async {
-    final respuesta = await http.get(Uri.parse(url));
-    return json.decode(respuesta.body);
+    try {
+      final respuesta = await http.get(Uri.parse(url));
+      if (respuesta.statusCode != 200) {
+        throw Exception("HTTP ${respuesta.statusCode}: ${respuesta.reasonPhrase}");
+      }
+      return json.decode(respuesta.body);
+    } catch (e) {
+      throw Exception("No se pudo cargar el catálogo: $e");
+    }
   }
 
   @override
@@ -67,7 +74,7 @@ class _CatalogoPeliculasState extends State<CatalogoPeliculas> {
                     },
                   );
                 } else if (snapshot.hasError) {
-                  return const Center(child: Text("Error al cargar los datos"));
+                  return Center(child: Text("Error: ${snapshot.error}"));
                 } else {
                   return const Column(
                     mainAxisAlignment: MainAxisAlignment.center,

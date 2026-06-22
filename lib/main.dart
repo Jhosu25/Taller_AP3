@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'screens/CatalogoPeliculas.dart';
+import 'screens/BienvenidaScreen.dart';
 
 void main() {
   runApp(const PeliculasApp());
@@ -13,7 +13,7 @@ class PeliculasApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CatalogoPeliculas(),
+      home: BienvenidaScreen(),
     );
   }
 }
