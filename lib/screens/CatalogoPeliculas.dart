@@ -12,9 +12,8 @@ class CatalogoPeliculas extends StatefulWidget {
 }
 
 class _CatalogoPeliculasState extends State<CatalogoPeliculas> {
-  // Sube el archivo assets/peliculas.json a GitHub Pages (igual que el profesor)
-  // y reemplaza esta URL por la tuya. Ej: https://TUUSUARIO.github.io/web-api/peliculas.json
-  final String url = "https://jritsqmet.github.io/web-api/peliculas.json";
+  // Archivo subido a git
+  final String url = "https://raw.githubusercontent.com/Jhosu25/Taller_AP3/master/peliculas.json";
 
   // FUNCIÓN QUE LEE EL JSON DESDE LA URL
   Future<List<dynamic>> leerURL() async {
