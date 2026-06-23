@@ -1,42 +1,82 @@
 [
   {
-    "titulo": "Big Buck Bunny",
-    "categoria": "Populares",
-    "descripcion": "Un conejo gigante y bondadoso se enfrenta a tres roedores que molestan a los animales del bosque.",
-    "anio": 2008,
-    "poster": "https://peach.blender.org/wp-content/uploads/title_anouncement.jpg",
-    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-  },
-  {
-    "titulo": "Elephants Dream",
-    "categoria": "Tendencias",
-    "descripcion": "Dos personajes exploran una extraña y enorme maquina llena de engranajes y pasillos imposibles.",
-    "anio": 2006,
-    "poster": "https://upload.wikimedia.org/wikipedia/commons/8/87/Elephants_Dream_cover.jpg",
-    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
-  },
-  {
-    "titulo": "Sintel",
-    "categoria": "Nuevas Llegadas",
-    "descripcion": "Una joven guerrera busca a un pequeno dragon al que crio y del que fue separada.",
-    "anio": 2010,
-    "poster": "https://durian.blender.org/wp-content/uploads/2010/06/05.8b_comp_000272.jpg",
-    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
-  },
-  {
-    "titulo": "Tears of Steel",
-    "categoria": "Populares",
-    "descripcion": "Un grupo de cientificos y guerreros intenta salvar al mundo de robots en un futuro distopico.",
-    "anio": 2012,
-    "poster": "https://mango.blender.org/wp-content/uploads/2013/05/tos-poster.png",
-    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
-  },
-  {
-    "titulo": "For Bigger Blazes",
-    "categoria": "Tendencias",
-    "descripcion": "Un cortometraje promocional que muestra contenido en alta definicion para transmision.",
+    "titulo": "Mad Max: Fury Road",
+    "categoria": "Accion",
+    "descripcion": "En un desierto postapocaliptico, Max ayuda a un grupo a huir de un tirano.",
     "anio": 2015,
-    "poster": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/ForBiggerBlazes.jpg",
-    "video": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
+    "poster": "https://upload.wikimedia.org/wikipedia/en/6/6e/Mad_Max_Fury_Road.jpg",
+    "video": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4"
+  },
+  {
+    "titulo": "Intensamente",
+    "categoria": "Animacion",
+    "descripcion": "Las emociones de una nina cobran vida dentro de su mente.",
+    "anio": 2015,
+    "poster": "https://upload.wikimedia.org/wikipedia/en/0/0a/Inside_Out_%282015_film%29_poster.jpg",
+    "video": "https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4"
+  },
+  {
+    "titulo": "Zootopia",
+    "categoria": "Animacion",
+    "descripcion": "Una coneja policia y un zorro estafador resuelven un misterio en una ciudad de animales.",
+    "anio": 2016,
+    "poster": "https://upload.wikimedia.org/wikipedia/en/e/ea/Zootopia.jpg",
+    "video": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4"
+  },
+  {
+    "titulo": "Coco",
+    "categoria": "Animacion",
+    "descripcion": "Un nino viaja a la Tierra de los Muertos para descubrir el secreto de su familia.",
+    "anio": 2017,
+    "poster": "https://upload.wikimedia.org/wikipedia/en/9/98/Coco_%282017_film%29_poster.jpg",
+    "video": "https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4"
+  },
+  {
+    "titulo": "Spider-Man: Un Nuevo Universo",
+    "categoria": "Animacion",
+    "descripcion": "Miles Morales se convierte en Spider-Man y conoce versiones de otros universos.",
+    "anio": 2018,
+    "poster": "https://upload.wikimedia.org/wikipedia/en/d/d3/Spider-Man_Into_the_Spider-Verse_poster.png",
+    "video": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4"
+  },
+  {
+    "titulo": "Avengers: Endgame",
+    "categoria": "Accion",
+    "descripcion": "Los heroes restantes buscan revertir la desaparicion causada por Thanos.",
+    "anio": 2019,
+    "poster": "https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg",
+    "video": "https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4"
+  },
+  {
+    "titulo": "Joker",
+    "categoria": "Drama",
+    "descripcion": "Un comediante fracasado desciende a la locura en una ciudad indiferente.",
+    "anio": 2019,
+    "poster": "https://upload.wikimedia.org/wikipedia/en/e/e1/Joker_%282019_film%29_poster.jpg",
+    "video": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4"
+  },
+  {
+    "titulo": "Dune",
+    "categoria": "Ciencia ficcion",
+    "descripcion": "Un joven heredero debe proteger un planeta desertico clave para el universo.",
+    "anio": 2021,
+    "poster": "https://upload.wikimedia.org/wikipedia/en/8/8e/Dune_%282021_film%29.jpg",
+    "video": "https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4"
+  },
+  {
+    "titulo": "Top Gun: Maverick",
+    "categoria": "Accion",
+    "descripcion": "Un veterano piloto entrena a una nueva generacion para una mision peligrosa.",
+    "anio": 2022,
+    "poster": "https://upload.wikimedia.org/wikipedia/en/1/13/Top_Gun_Maverick_Poster.jpg",
+    "video": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4"
+  },
+  {
+    "titulo": "Oppenheimer",
+    "categoria": "Drama",
+    "descripcion": "La historia del cientifico detras de la creacion de la bomba atomica.",
+    "anio": 2023,
+    "poster": "https://upload.wikimedia.org/wikipedia/en/4/4a/Oppenheimer_%28film%29.jpg",
+    "video": "https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4"
   }
 ]
