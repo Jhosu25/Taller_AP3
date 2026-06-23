@@ -20,7 +20,7 @@
     "categoria": "Animacion",
     "descripcion": "Una coneja policia y un zorro estafador resuelven un misterio en una ciudad de animales.",
     "anio": 2016,
-    "poster": "https://upload.wikimedia.org/wikipedia/en/e/ea/Zootopia.jpg",
+    "poster": "https://static.wikia.nocookie.net/doblaje/images/5/51/Poster_-_Zootopia.jpg/revision/latest?cb=20260201001339&path-prefix=es",
     "video": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4"
   },
   {
@@ -36,7 +36,7 @@
     "categoria": "Animacion",
     "descripcion": "Miles Morales se convierte en Spider-Man y conoce versiones de otros universos.",
     "anio": 2018,
-    "poster": "https://upload.wikimedia.org/wikipedia/en/d/d3/Spider-Man_Into_the_Spider-Verse_poster.png",
+    "poster": "https://i.pinimg.com/736x/04/5d/1f/045d1fc55ebdfad00de94d9347a44122.jpg",
     "video": "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4"
   },
   {
