@@ -23,15 +23,27 @@ class _LoginScreenState extends State<LoginScreen> {
     setState(() => cargando = true);
 
     try {
-      await Supabase.instance.client.auth.signInWithPassword(
+      final res = await Supabase.instance.client.auth.signInWithPassword(
         email: email.text.trim(),
         password: password.text.trim(),
       );
 
+      String rol = 'usuario';
+      final datos = await Supabase.instance.client
+          .from('usuarios')
+          .select('rol')
+          .eq('auth_id', res.user!.id)
+          .maybeSingle();
+      if (datos != null && datos['rol'] != null) {
+        rol = datos['rol'] as String;
+      }
+
       if (mounted) {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (context) => CatalogoPeliculas()),
+          MaterialPageRoute(
+            builder: (context) => CatalogoPeliculas(esAdmin: rol == 'admin'),
+          ),
         );
       }
     } on AuthException catch (e) {

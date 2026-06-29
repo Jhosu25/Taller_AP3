@@ -12,22 +12,60 @@ class _RegistroScreenState extends State<RegistroScreen> {
   final TextEditingController nombre = TextEditingController();
   final TextEditingController email = TextEditingController();
   final TextEditingController password = TextEditingController();
+  final TextEditingController edad = TextEditingController();
+  final TextEditingController ciudad = TextEditingController();
+  final TextEditingController telefono = TextEditingController();
+
   bool cargando = false;
 
+  @override
+  void dispose() {
+    nombre.dispose();
+    email.dispose();
+    password.dispose();
+    edad.dispose();
+    ciudad.dispose();
+    telefono.dispose();
+    super.dispose();
+  }
+
   Future<void> registrar() async {
-    if (nombre.text.isEmpty || email.text.isEmpty || password.text.isEmpty) {
+
+    if (nombre.text.isEmpty ||
+        email.text.isEmpty ||
+        password.text.isEmpty ||
+        edad.text.isEmpty ||
+        ciudad.text.isEmpty ||
+        telefono.text.isEmpty) {
       _mostrarMensaje('Error', 'Todos los campos son obligatorios');
+      return;
+    }
+
+    final int? edadNum = int.tryParse(edad.text.trim());
+    if (edadNum == null || edadNum <= 0 || edadNum > 120) {
+      _mostrarMensaje('Error', 'Ingresa una edad válida');
       return;
     }
 
     setState(() => cargando = true);
 
     try {
-      await Supabase.instance.client.auth.signUp(
+
+      final AuthResponse res = await Supabase.instance.client.auth.signUp(
         email: email.text.trim(),
         password: password.text.trim(),
         data: {'nombre': nombre.text.trim()},
       );
+
+      await Supabase.instance.client.from('usuarios').insert({
+        'auth_id': res.user?.id,
+        'nombre': nombre.text.trim(),
+        'email': email.text.trim(),
+        'edad': edadNum,
+        'ciudad': ciudad.text.trim(),
+        'telefono': telefono.text.trim(),
+        'rol': 'usuario', // por defecto todos se registran como usuario
+      });
 
       if (mounted) {
         _mostrarMensaje(
@@ -41,6 +79,8 @@ class _RegistroScreenState extends State<RegistroScreen> {
       }
     } on AuthException catch (e) {
       _mostrarMensaje('Error', e.message);
+    } on PostgrestException catch (e) {
+      _mostrarMensaje('Error', 'No se pudo guardar el usuario: ${e.message}');
     } catch (e) {
       _mostrarMensaje('Error', 'Ocurrió un error inesperado');
     } finally {
@@ -68,7 +108,7 @@ class _RegistroScreenState extends State<RegistroScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('Registrarse')),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: EdgeInsets.all(20),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -95,6 +135,35 @@ class _RegistroScreenState extends State<RegistroScreen> {
               obscureText: true,
               decoration: InputDecoration(
                 labelText: 'Contraseña',
+                border: OutlineInputBorder(),
+              ),
+            ),
+            SizedBox(height: 16),
+            
+            TextField(
+              controller: edad,
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                labelText: 'Edad',
+                border: OutlineInputBorder(),
+              ),
+            ),
+            SizedBox(height: 16),
+            
+            TextField(
+              controller: ciudad,
+              decoration: InputDecoration(
+                labelText: 'Ciudad',
+                border: OutlineInputBorder(),
+              ),
+            ),
+            SizedBox(height: 16),
+            
+            TextField(
+              controller: telefono,
+              keyboardType: TextInputType.phone,
+              decoration: InputDecoration(
+                labelText: 'Teléfono',
                 border: OutlineInputBorder(),
               ),
             ),

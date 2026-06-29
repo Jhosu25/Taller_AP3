@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 import 'ReproductorPelicula.dart';
+import 'GestionUsuarios.dart';
 
 class CatalogoPeliculas extends StatefulWidget {
-  const CatalogoPeliculas({super.key});
+  final bool esAdmin;
+  const CatalogoPeliculas({super.key, this.esAdmin = false});
 
   @override
   State<CatalogoPeliculas> createState() => _CatalogoPeliculasState();
@@ -31,7 +33,21 @@ class _CatalogoPeliculasState extends State<CatalogoPeliculas> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Catálogo de Películas")),
+      appBar: AppBar(
+        title: const Text("Catálogo de Películas"),
+        actions: [
+          
+          if (widget.esAdmin)
+            IconButton(
+              tooltip: 'Administrar usuarios',
+              icon: const Icon(Icons.people),
+              onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const GestionUsuarios()),
+              ),
+            ),
+        ],
+      ),
       body: Column(
         children: [
           const Padding(
@@ -62,9 +78,9 @@ class _CatalogoPeliculasState extends State<CatalogoPeliculas> {
                         title: Text(item['titulo']),
                         subtitle: Text(
                             "${item['categoria']}  •  ${item['descripcion']}"),
-                        // Al tocar la fila se muestra más información
+                        
                         onTap: () => verMas(context, item),
-                        // TRAILING con un botón que reproduce la película
+                        
                         trailing: IconButton(
                           icon: const Icon(Icons.play_circle_fill),
                           onPressed: () => reproducir(context, item),
@@ -92,7 +108,7 @@ class _CatalogoPeliculasState extends State<CatalogoPeliculas> {
   }
 }
 
-// MUESTRA MÁS INFORMACIÓN DE LA PELÍCULA
+
 void verMas(BuildContext context, dynamic p) {
   showDialog(
     context: context,
@@ -127,7 +143,7 @@ void verMas(BuildContext context, dynamic p) {
   );
 }
 
-// NAVEGA A LA PANTALLA DE REPRODUCCIÓN
+
 void reproducir(BuildContext context, dynamic p) {
   Navigator.push(
     context,
